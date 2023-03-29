@@ -2,7 +2,9 @@
     width: 100%;
     height: 88px;
     color: #111827;
-    box-shadow: 0 2px 1px rgba(0,0,0,.05);
+    border-bottom: 3px solid #f3f3f3;
+    position: relative;
+    z-index: 1;
     .nav-container{
         display: flex;
         justify-content: space-between;
@@ -27,14 +29,16 @@
         }
     }
     .sub-nav-container{
+        z-index: 1;
         width: 728px;
         ul{
             list-style-type: none;
             margin: 0 35px;
             cursor: pointer;
             :hover{
-                background-color: #f3f4f6;
-                border-radius: 9999px;
+                .tour-down-container{
+                    display: block;
+                }
             }
         }
         li{
@@ -46,6 +50,50 @@
                 font-weight: 600;
                 text-decoration: none;
                 color: #111827;
+            }
+        }
+    }
+    .tour-down-container{
+        width: 840px;
+        height: 376px;
+        box-shadow: rgb(0 0 0 / 10%) 0px 13px 13px 13px;
+        animation: infinite;
+        animation: nav-down-ani ease 0.67s;
+        transform-origin: 20% top;
+        padding: 24px 12px;
+        font-size: 14px;
+        color: #111827;
+        position: absolute;
+        z-index: 2;
+        left: 287px;
+        top: 65px;
+        border-radius: 15px!important;
+        display: none;
+        .tour-down-container-main{
+            display: flex;
+            justify-content: space-between;
+        }
+        .list-tour-container{
+            width: 144px;
+            .nav-down-img{
+                width: 144px;
+                height: 96px;
+                border-radius: 10px;
+                object-fit: cover;
+            }
+            .list-nav{
+                margin:0!important;
+                width: 144px;
+                margin-right: 20px;
+                text-align: left;
+                .header-list-nav{
+                    font-weight: 700;
+                    margin-top: 8px;
+                }
+                li{
+                    width: 144px;
+                    padding:0!important;
+                }
             }
         }
     }
@@ -86,5 +134,16 @@
         .login-btn:hover{
             opacity: 0.95;
         }
+    }
+}
+@keyframes nav-down-ani
+{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
     }
 }

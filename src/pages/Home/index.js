@@ -1,6 +1,13 @@
+import styles from "./Home.module.scss"
+import classNames from "classnames/bind";
+
+const cx = classNames.bind(styles)
+
 function HomePage() {
     return ( 
-        <h2>Home Page</h2>
+        <div className={cx('Home-main')}>
+            <h2>Home Page</h2>
+        </div>
      );
 }
 
