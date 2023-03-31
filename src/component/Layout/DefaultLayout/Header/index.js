@@ -2,6 +2,10 @@ import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
 import images from "~/component/assets/images";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Tippy from '@tippyjs/react/headless';
+import Wrapper from "./wrapper";
+import 'tippy.js/dist/tippy.css';
+import { Link } from "react-router-dom";
 import {
   faChevronDown,
   faMagnifyingGlass,
@@ -26,94 +30,22 @@ function Header() {
             <li>
               <a href="/">Giới thiệu</a>
             </li>
-            <li className={cx("tour-down")}>
-              <a href="/">
-                Tour du lịch
-                <FontAwesomeIcon
-                  icon={faChevronDown}
-                  style={{ marginLeft: 2 }}
-                />
-              </a>
-              <div className={cx("tour-down-container")}>
-                <div className={cx("tour-down-container-main")}>
-                  <div className={cx("list-tour-container")}>
-                    <img
-                      src={images.nav1}
-                      alt="nav1"
-                      className={cx("nav-down-img")}
-                    />
-                    <ul className={cx("list-nav")}>
-                      <li className={cx("header-list-nav")}>Tour miền nam</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                    </ul>
-                  </div>
-                  <div className={cx("list-tour-container")}>
-                    <img
-                      src={images.nav2}
-                      alt="nav1"
-                      className={cx("nav-down-img")}
-                    />
-                    <ul className={cx("list-nav")}>
-                      <li className={cx("header-list-nav")}>Tour miền nam</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                    </ul>
-                  </div>
-                  <div className={cx("list-tour-container")}>
-                    <img
-                      src={images.nav3}
-                      alt="nav1"
-                      className={cx("nav-down-img")}
-                    />
-                    <ul className={cx("list-nav")}>
-                      <li className={cx("header-list-nav")}>Tour miền nam</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                    </ul>
-                  </div>
-                  <div className={cx("list-tour-container")}>
-                    <img
-                      src={images.nav4}
-                      alt="nav1"
-                      className={cx("nav-down-img")}
-                    />
-                    <ul className={cx("list-nav")}>
-                      <li className={cx("header-list-nav")}>Tour miền nam</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                    </ul>
-                  </div>
-                  <div className={cx("list-tour-container")}>
-                    <img
-                      src={images.nav5}
-                      alt="nav1"
-                      className={cx("nav-down-img")}
-                    />
-                    <ul className={cx("list-nav")}>
-                      <li className={cx("header-list-nav")}>Tour miền nam</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                      <li>Hồ Chí Minh</li>
-                    </ul>
-                  </div>
-                </div>
+            <Tippy render={attrs => (
+              <div className={cx('wrapper-container')} tabIndex="-1" {...attrs} >
+                  <Wrapper></Wrapper>
               </div>
-            </li>
+            )} placement="bottom" trigger="mouseenter focus">
+              <li className={cx("tour-down")}>
+                <a href="/">
+                  Tour du lịch
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    style={{ marginLeft: 2 }}
+                  />
+                </a>
+                {/* <Wrapper/> */}
+              </li>
+              </Tippy>
             <li>
               <a href="/">Tin tức</a>
             </li>
@@ -130,9 +62,11 @@ function Header() {
             <FontAwesomeIcon icon={faMagnifyingGlass} className={cx("icon")} />
           </div>
           <div className={cx("login-sub-container")}>
-            <a className={cx("login-btn")} href="/">
-              Đăng nhập
-            </a>
+                <Link to="/login" className={cx('login-btn-link')}>
+                  <button className={cx("login-btn")}>
+                    Đăng nhập
+                  </button>
+                </Link>
           </div>
         </div>
       </div>

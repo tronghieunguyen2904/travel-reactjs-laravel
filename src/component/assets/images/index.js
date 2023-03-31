@@ -5,5 +5,8 @@ const images ={
     nav3: require('./image/nav3.jpeg'),
     nav4: require('./image/nav4.jpeg'),
     nav5: require('./image/nav5.jpeg'),
+    slide: require('./image/slide.jpg'),
+    slide2: require('./image/slide2.jpeg'),
+    slide3: require('./image/slide3.jpg'),
 }
 export default images;
