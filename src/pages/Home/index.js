@@ -5,14 +5,22 @@ import images from "~/component/assets/images";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendar,
+  faCreditCard,
+  faHeadset,
   faLocationDot,
   faMagnifyingGlass,
+  faMobile,
+  faMoneyBill,
+  faPlaneUp,
+  faThumbsUp,
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useState } from "react";
+import CartLocation from "./CartLocation";
+import WhyChooseBox from "./WhyChoose";
 
 const cx = classNames.bind(styles);
 function HomePage() {
@@ -74,11 +82,12 @@ function HomePage() {
             </div>
           </div>
         </div>
+        {/* Search container */}
         <div className={cx("search-container")}>
           <form className={cx("search-body")}>
             <div
               className={cx("input-container")}
-              style={{ borderRight: "2px solid #ddd" ,height:110}}
+              style={{ borderRight: "2px solid #ddd", height: 110 }}
             >
               <div
                 className={cx("input-location-icon")}
@@ -150,12 +159,92 @@ function HomePage() {
                 </span>
               </div>
             </div>
-            <div className={cx('circle-btn')}>
+            <div className={cx("circle-btn")}>
               <button>
-                <FontAwesomeIcon icon={faMagnifyingGlass} className={cx('icon-circle-btn')} />
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  className={cx("icon-circle-btn")}
+                />
               </button>
             </div>
           </form>
+        </div>
+        {/* Location List */}
+        <div className={cx("location-container")}>
+          <div className={cx("location-heading-container")}>
+            <h2>Địa điểm du lịch nổi bật</h2>
+            <span>Các tour du lịch tại nhiều địa điểm nổi bật</span>
+          </div>
+          <div className={cx("location-list-container")}>
+            <CartLocation
+              img={images.cartLocation1}
+              heading="Phú Quốc"
+              decription="112 properties"
+            />
+            <CartLocation
+              img={images.cartLocation5}
+              heading="Đà Nẵng"
+              decription="112 properties"
+            />
+            <CartLocation
+              img={images.cartLocation4}
+              heading="Hội An"
+              decription="112 properties"
+            />
+            <CartLocation
+              img={images.cartLocation3}
+              heading="Huế"
+              decription="112 properties"
+            />
+            <CartLocation
+              img={images.cartLocation2}
+              heading="Đà Lạt"
+              decription="112 properties"
+            />
+          </div>
+        </div>
+        <div className={cx("location-container")}>
+          <div className={cx("location-heading-container")}>
+            <h2>Tại sao lại lựa chọn chúng tôi?</h2>
+            <span>Các tour du lịch tại nhiều địa điểm nổi bật</span>
+          </div>
+          <div className={cx("why-choose-container")}>
+            <div className={cx("why-choose-img")}>
+              <img src={images.slide} alt="why choose" />
+            </div>
+            <div className={cx("why-choose-content-container")}>
+              <WhyChooseBox
+                icon={faPlaneUp}
+                heading="Đặt tour"
+                des="Dễ dàng & nhanh chóng chỉ với 3 bước"
+              />
+              <WhyChooseBox
+                icon={faThumbsUp}
+                heading="Sản phẩm & Dịch vụ"
+                des="Đa dạng – Chất lượng – An toàn"
+              />
+              <WhyChooseBox
+                icon={faMoneyBill}
+                heading="Giá cả"
+                des="Luôn có mức giá tốt nhất"
+              />
+              <WhyChooseBox
+                icon={faHeadset}
+                heading="Hỗ trợ"
+                des="Hotline & trực tuyến (08h00 - 22h00)"
+              />
+              <WhyChooseBox
+                icon={faCreditCard}
+                heading="Thanh toán"
+                des="An toàn & linh hoạt"
+              />
+              <WhyChooseBox
+                icon={faMobile}
+                heading="Mạng bán tour"
+                des="Ứng dụng công nghệ mới nhất"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
