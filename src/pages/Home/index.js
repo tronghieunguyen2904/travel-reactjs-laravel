@@ -4,6 +4,7 @@ import { Button, FormControl, MenuItem, Select } from "@mui/material";
 import images from "~/component/assets/images";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faArrowRight,
   faCalendar,
   faCreditCard,
   faHeadset,
@@ -21,6 +22,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useState } from "react";
 import CartLocation from "./CartLocation";
 import WhyChooseBox from "./WhyChoose";
+import Product from "./Product";
 
 const cx = classNames.bind(styles);
 function HomePage() {
@@ -203,6 +205,7 @@ function HomePage() {
             />
           </div>
         </div>
+        {/* Why Choose */}
         <div className={cx("location-container")}>
           <div className={cx("location-heading-container")}>
             <h2>Tại sao lại lựa chọn chúng tôi?</h2>
@@ -210,7 +213,7 @@ function HomePage() {
           </div>
           <div className={cx("why-choose-container")}>
             <div className={cx("why-choose-img")}>
-              <img src={images.slide} alt="why choose" />
+              <img src={images.slide3} alt="why choose" />
             </div>
             <div className={cx("why-choose-content-container")}>
               <WhyChooseBox
@@ -244,6 +247,104 @@ function HomePage() {
                 des="Ứng dụng công nghệ mới nhất"
               />
             </div>
+          </div>
+        </div>
+        {/* Product List */}
+        <div
+          className={cx("location-container")}
+          style={{
+            backgroundColor: "#f3f4f6",
+            padding: "64px 48px",
+            borderRadius: "40px",
+            maxWidth:"1380px!important"
+          }}
+        >
+          <div className={cx("location-heading-container")}>
+            <h2>Các tour thịnh hành</h2>
+            <span>
+              Những tour du lịch thịnh hành mà chúng tôi đề xuất cho bạn
+            </span>
+          </div>
+          <div className={cx("btn-location-product-container")}>
+            <div className={cx("btn-location-product-list")}>
+              <ul className={cx("ul-location-product")}>
+                <li className={cx("li-location-product")}>
+                  <button className={cx("btn-location-product")}>
+                    Phú Quốc
+                  </button>
+                </li>
+                <li className={cx("li-location-product")}>
+                  <button className={cx("btn-location-product")}>
+                    Phú Quốc
+                  </button>
+                </li>
+                <li className={cx("li-location-product")}>
+                  <button className={cx("btn-location-product")}>
+                    Phú Quốc
+                  </button>
+                </li>
+                <li className={cx("li-location-product")}>
+                  <button className={cx("btn-location-product")}>
+                    Phú Quốc
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div className={cx("btn-location-product-all-container")}>
+              <button className={cx("btn-location-product-all")}>
+                View all <FontAwesomeIcon icon={faArrowRight} />
+              </button>
+            </div>
+          </div>
+          <div className={cx("product-container")}>
+              <Product 
+                img={images.slide}
+                name="Du lịch phú quốc"
+                location="Phú quốc"
+                price={28}
+              />
+              <Product 
+                img={images.slide}
+                name="Du lịch phú quốc"
+                location="Phú quốc"
+                price={28}
+              />
+              <Product 
+                img={images.slide}
+                name="Du lịch phú quốc"
+                location="Phú quốc"
+                price={28}
+              />
+              <Product 
+                img={images.slide}
+                name="Du lịch phú quốc"
+                location="Phú quốc"
+                price={28}
+              />
+              <Product 
+                img={images.slide}
+                name="Du lịch phú quốc"
+                location="Phú quốc"
+                price={28}
+              />
+              <Product 
+                img={images.slide}
+                name="Du lịch phú quốc"
+                location="Phú quốc"
+                price={28}
+              />
+              <Product 
+                img={images.slide}
+                name="Du lịch phú quốc"
+                location="Phú quốc"
+                price={28}
+              />
+              <Product 
+                img={images.slide}
+                name="Du lịch phú quốc"
+                location="Phú quốc"
+                price={28}
+              />
           </div>
         </div>
       </div>
