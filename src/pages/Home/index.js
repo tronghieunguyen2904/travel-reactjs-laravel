@@ -30,6 +30,10 @@ function HomePage() {
   const handleChange = (event) => {
     setGuest(event.target.value);
   };
+  const [activeButton,setActiveButton] = useState(0);
+  const handleActive = (btnIndex)=>{
+    setActiveButton(btnIndex)
+  }
   return (
     <div className={cx("Home-main")}>
       <div className={cx("Home-container")}>
@@ -269,22 +273,34 @@ function HomePage() {
             <div className={cx("btn-location-product-list")}>
               <ul className={cx("ul-location-product")}>
                 <li className={cx("li-location-product")}>
-                  <button className={cx("btn-location-product")}>
+                  <button 
+                    className={cx("btn-location-product", `${activeButton === 0 ? "active" : ""}`)}
+                    onClick={()=> handleActive(0)}
+                  >
                     Phú Quốc
                   </button>
                 </li>
                 <li className={cx("li-location-product")}>
-                  <button className={cx("btn-location-product")}>
+                  <button 
+                    className={cx("btn-location-product", `${activeButton === 1 ? "active" : ""}`)}
+                    onClick={()=> handleActive(1)}
+                  >
                     Phú Quốc
                   </button>
                 </li>
                 <li className={cx("li-location-product")}>
-                  <button className={cx("btn-location-product")}>
+                  <button 
+                    className={cx("btn-location-product", `${activeButton === 2 ? "active" : ""}`)}
+                    onClick={()=> handleActive(2)}
+                  >
                     Phú Quốc
                   </button>
                 </li>
                 <li className={cx("li-location-product")}>
-                  <button className={cx("btn-location-product")}>
+                  <button 
+                    className={cx("btn-location-product", `${activeButton === 3 ? "active" : ""}`)}
+                    onClick={()=> handleActive(3)}
+                  >
                     Phú Quốc
                   </button>
                 </li>
@@ -298,50 +314,50 @@ function HomePage() {
           </div>
           <div className={cx("product-container")}>
               <Product 
-                img={images.slide}
+                img={images.productPhuQuoc}
                 name="Du lịch phú quốc"
                 location="Phú quốc"
                 price={28}
               />
               <Product 
-                img={images.slide}
-                name="Du lịch phú quốc"
+                img={images.productDaLat}
+                name="Du lịch đà lạt"
                 location="Phú quốc"
                 price={28}
               />
               <Product 
-                img={images.slide}
-                name="Du lịch phú quốc"
+                img={images.productHaLong}
+                name="Du lịch hạ long"
                 location="Phú quốc"
                 price={28}
               />
               <Product 
-                img={images.slide}
-                name="Du lịch phú quốc"
+                img={images.productHoiAn}
+                name="Du lịch hội an"
                 location="Phú quốc"
                 price={28}
               />
               <Product 
-                img={images.slide}
-                name="Du lịch phú quốc"
+                img={images.productNhaTrang}
+                name="Du lịch nha trang"
                 location="Phú quốc"
                 price={28}
               />
               <Product 
-                img={images.slide}
-                name="Du lịch phú quốc"
+                img={images.productQuyNhon}
+                name="Du lịch quy nhơn"
                 location="Phú quốc"
                 price={28}
               />
               <Product 
-                img={images.slide}
-                name="Du lịch phú quốc"
+                img={images.productSaPa}
+                name="Du lịch sa pa"
                 location="Phú quốc"
                 price={28}
               />
               <Product 
-                img={images.slide}
-                name="Du lịch phú quốc"
+                img={images.productConDao}
+                name="Du lịch côn đảo"
                 location="Phú quốc"
                 price={28}
               />

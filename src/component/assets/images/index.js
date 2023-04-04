@@ -13,5 +13,13 @@ const images ={
     cartLocation3: require('./image/cartlocation3.jpg'),
     cartLocation4: require('./image/cartlocation4.jpg'),
     cartLocation5: require('./image/cartlocation5.jpg'),
+    productDaLat: require('./image/dalat.jpg'),
+    productPhuQuoc: require('./image/phuquoc.jpg'),
+    productQuyNhon: require('./image/quynhon.jpg'),
+    productConDao: require('./image/condao.jpg'),
+    productNhaTrang: require('./image/nhatrang.jpg'),
+    productSaPa: require('./image/sapa.jpg'),
+    productHaLong: require('./image/halong.jpg'),
+    productHoiAn: require('./image/hoian.jpg'),
 }
 export default images;
