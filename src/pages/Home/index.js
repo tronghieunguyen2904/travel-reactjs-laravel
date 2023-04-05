@@ -23,6 +23,7 @@ import { useState } from "react";
 import CartLocation from "./CartLocation";
 import WhyChooseBox from "./WhyChoose";
 import Product from "./Product";
+import ProductDisCount from "./ProductDiscount";
 
 const cx = classNames.bind(styles);
 function HomePage() {
@@ -253,7 +254,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-        {/* Product List */}
+        {/* Product List v1*/}
         <div
           className={cx("location-container")}
           style={{
@@ -262,7 +263,7 @@ function HomePage() {
             borderRadius: "40px",
             maxWidth:"1380px!important"
           }}
-        >
+          >
           <div className={cx("location-heading-container")}>
             <h2>Các tour thịnh hành</h2>
             <span>
@@ -356,6 +357,116 @@ function HomePage() {
                 price={28}
               />
               <Product 
+                img={images.productConDao}
+                name="Du lịch côn đảo"
+                location="Phú quốc"
+                price={28}
+              />
+          </div>
+        </div>
+        {/* Product List v2 */}
+        <div
+          className={cx("location-container")}
+          style={{
+            backgroundColor: "#f3f4f6",
+            padding: "64px 48px",
+            borderRadius: "40px",
+            maxWidth:"1380px!important"
+          }}
+          >
+          <div className={cx("location-heading-container")}>
+            <h2>Các tour ưu đãi</h2>
+            <span>
+              Những tour du lịch đang giảm giá chúng tôi đề xuất cho bạn
+            </span>
+          </div>
+          <div className={cx("btn-location-product-container")}>
+            <div className={cx("btn-location-product-list")}>
+              <ul className={cx("ul-location-product")}>
+                <li className={cx("li-location-product")}>
+                  <button 
+                    className={cx("btn-location-product", `${activeButton === 0 ? "active" : ""}`)}
+                    onClick={()=> handleActive(0)}
+                  >
+                    Phú Quốc
+                  </button>
+                </li>
+                <li className={cx("li-location-product")}>
+                  <button 
+                    className={cx("btn-location-product", `${activeButton === 1 ? "active" : ""}`)}
+                    onClick={()=> handleActive(1)}
+                  >
+                    Phú Quốc
+                  </button>
+                </li>
+                <li className={cx("li-location-product")}>
+                  <button 
+                    className={cx("btn-location-product", `${activeButton === 2 ? "active" : ""}`)}
+                    onClick={()=> handleActive(2)}
+                  >
+                    Phú Quốc
+                  </button>
+                </li>
+                <li className={cx("li-location-product")}>
+                  <button 
+                    className={cx("btn-location-product", `${activeButton === 3 ? "active" : ""}`)}
+                    onClick={()=> handleActive(3)}
+                  >
+                    Phú Quốc
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div className={cx("btn-location-product-all-container")}>
+              <button className={cx("btn-location-product-all")}>
+                View all <FontAwesomeIcon icon={faArrowRight} />
+              </button>
+            </div>
+          </div>
+          <div className={cx("product-container")}>
+              <ProductDisCount 
+                img={images.productPhuQuoc}
+                name="Du lịch phú quốc"
+                location="Phú quốc"
+                price={28}
+              />
+              <ProductDisCount 
+                img={images.productDaLat}
+                name="Du lịch đà lạt"
+                location="Phú quốc"
+                price={28}
+              />
+              <ProductDisCount 
+                img={images.productHaLong}
+                name="Du lịch hạ long"
+                location="Phú quốc"
+                price={28}
+              />
+              <ProductDisCount 
+                img={images.productHoiAn}
+                name="Du lịch hội an"
+                location="Phú quốc"
+                price={28}
+              />
+              <ProductDisCount 
+                img={images.productNhaTrang}
+                name="Du lịch nha trang"
+                location="Phú quốc"
+                price={28}
+              />
+              <ProductDisCount 
+                img={images.productQuyNhon}
+                name="Du lịch quy nhơn"
+                location="Phú quốc"
+                price={28}
+              />
+              <ProductDisCount 
+                img={images.productSaPa}
+                name="Du lịch sa pa"
+                location="Phú quốc"
+                price={28}
+              />
+              <ProductDisCount 
                 img={images.productConDao}
                 name="Du lịch côn đảo"
                 location="Phú quốc"
